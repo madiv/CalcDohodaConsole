@@ -10,12 +10,18 @@ namespace CalcDohodaConsole
     {
         static void Main(string[] args)
         {
-            double stavka = 6.3;
-            double vklad = 100000;
-            double years = 3;
-            double mes = years * 12;
-            double dni = years * 365;
+            Console.Write("Введите значение процентной ставки ");
+            double stavka = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Введите сумму вклада ");
+            double vklad = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Введите срок вклада в днях ");
+            //double years = 3;
+            //double mes = years * 12;
+            double dni = Convert.ToDouble(Console.ReadLine());
             double effectProcent = 0;
+            double mes = dni / 30;
 
             effectProcent = (1 + stavka / 1200);
             effectProcent = Math.Pow(effectProcent,mes);
@@ -23,9 +29,10 @@ namespace CalcDohodaConsole
             effectProcent = effectProcent * (12 / mes);
 
             vklad = vklad + ((vklad * effectProcent) / 365) * dni;
-            
 
-            
+            Console.WriteLine("Эффективная ставка = {0:P}", effectProcent);
+            Console.WriteLine("Сумма вклада = {0:C} ", vklad);
+            Console.ReadKey();        
         }
     }
 }
