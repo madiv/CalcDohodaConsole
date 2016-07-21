@@ -10,6 +10,17 @@ namespace CalcDohodaConsole
     {
         static void Main(string[] args)
         {
+            Console.Write("Введите дату открытия вклада ");
+            System.DateTime openDate = Convert.ToDateTime(Console.ReadLine());
+            Console.Write("Введите дату закрытия вклада ");
+            System.DateTime closeDate = Convert.ToDateTime(Console.ReadLine());
+            System.TimeSpan srok = closeDate.Subtract(openDate);
+            Console.Write("" + srok);
+
+
+
+
+            //DateTime openDate = DateTime.
             Console.Write("Введите значение процентной ставки ");
             double stavka = Convert.ToDouble(Console.ReadLine());
 
