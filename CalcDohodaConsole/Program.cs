@@ -15,6 +15,7 @@ namespace CalcDohodaConsole
             Console.Write("Введите дату закрытия вклада ");
             System.DateTime closeDate = Convert.ToDateTime(Console.ReadLine());
             System.TimeSpan srok = closeDate.Subtract(openDate);
+            var srokDni = Convert.ToDouble(srok);
             Console.Write("" + srok);
 
 
